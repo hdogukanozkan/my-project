@@ -3,6 +3,14 @@ const menu_bar = document.querySelector(".menu-bar");
 const next = document.querySelector(".next");
 const prev = document.querySelector(".prev");
 
+
+/* --------------------------------------------------   */
+const activesAll = document.querySelectorAll(".actives");
+const circles = document.querySelectorAll(".circle");
+const bar = document.querySelector(".container-box-bar");
+
+
+
 menu_icon.addEventListener("click", () => {
     menu_bar.classList.toggle("active");
 })
@@ -41,6 +49,7 @@ prev.addEventListener("click", () => {
 next.addEventListener("click", () => {
     i = i + 1;
     full();
+
     posts.forEach((post, index) => {
         if (i === index) {
             remove();
@@ -52,6 +61,20 @@ next.addEventListener("click", () => {
 
 
 function full() {
+    /*----------------------------------------------------------------------------------*/
+    circles.forEach((circle, index) => {
+        if (index < (i + 1)) {
+            circle.classList.add("actives");
+        }
+        else {
+            circle.classList.remove("actives")
+        }
+    })
+
+
+    bar.style.width = (i) / (circles.length - 1) * 100 + "%";
+    /*  ----------------------------------------------------------------------------------- */
+
     if (i === (posts.length - 1)) {
         i = 4;
         next.disabled = true;
@@ -68,3 +91,5 @@ function full() {
         prev.disabled = false;
     }
 }
+
+
