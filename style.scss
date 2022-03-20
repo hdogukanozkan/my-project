@@ -16,6 +16,101 @@ nav{
     background-color: $anarenk;
     box-shadow: 0px 0px 10px rgba($color: #000000, $alpha: .1);
     position: relative;
+    .left{
+        display: flex;
+        align-items: center;
+        font-size: 25px;
+        font-weight: bold;
+        .icon{
+            margin-right: 8px;
+            @media screen and (max-width:850px) {
+                margin-right: 5px;
+            }
+        }
+    }
+    
+    .right{
+        input{
+            position: absolute;
+            appearance: none;
+        }
+        input:checked ~ .menu-icon{
+            border: 1px solid #fff;
+        }
+    
+        .menu-icon{
+            font-size: 2rem;
+            border-radius: 2px;
+            padding: 4px;
+            display: none;
+            cursor: pointer;
+            
+            @media screen and (max-width:850px){
+                display: block;
+            }
+    
+        }
+    
+    
+        .menu-bar{
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @media screen and (max-width:850px) {
+                display: block;
+                background-color: $anarenk;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                height: 0px;
+               
+                overflow-y: hidden;
+                opacity: 0;
+    
+                &.active{
+                    border-top: 1px solid rgba($color: #fff, $alpha: .3);
+                    transition: all 0.2s ease-in;
+                    height: auto;
+                    opacity: 1;
+                    overflow-y: auto;
+                }
+            }
+    
+            li{
+                font-size: 18px;
+                list-style: none;
+                margin-right: 1rem;
+                padding: 8px 18px;
+                cursor: pointer;
+                background-color: $ikincirenk;
+                color: $anarenk;
+                outline: none;
+                border-radius: 5px;
+                @media screen and (max-width:850px){
+                    font-size: 21px;
+                    margin-right:0;
+                    text-align: center;
+                    padding: 15px 0;
+                    width: 100%;
+                    border-radius: 0;
+                    background-color: $anarenk;
+                    color: $ikincirenk;
+                    &:hover{
+                        background-color: $ikincirenk;
+                        color: $anarenk;
+                    }
+                }
+    
+                &:active{
+                    transform: scale(.95);
+                    
+                }
+            }
+        }
+    }
     .container{
         display: flex;
         justify-content: space-between;
@@ -33,101 +128,7 @@ nav{
     }
 }
 
-.left{
-    display: flex;
-    align-items: center;
-    font-size: 25px;
-    font-weight: bold;
-    .icon{
-        margin-right: 8px;
-        @media screen and (max-width:850px) {
-            margin-right: 5px;
-        }
-    }
-}
 
-.right{
-    input{
-        position: absolute;
-        appearance: none;
-    }
-    input:checked ~ .menu-icon{
-        border: 1px solid #fff;
-    }
-
-    .menu-icon{
-        font-size: 2rem;
-        border-radius: 2px;
-        padding: 4px;
-        display: none;
-        cursor: pointer;
-        
-        @media screen and (max-width:850px){
-            display: block;
-        }
-
-    }
-
-
-    .menu-bar{
-        z-index: 2;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        @media screen and (max-width:850px) {
-            display: block;
-            background-color: $anarenk;
-            flex-direction: column;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-            height: 0px;
-           
-            overflow-y: hidden;
-            opacity: 0;
-
-            &.active{
-                border-top: 1px solid rgba($color: #fff, $alpha: .3);
-                transition: all 0.2s ease-in;
-                height: auto;
-                opacity: 1;
-                overflow-y: auto;
-            }
-        }
-
-        li{
-            font-size: 18px;
-            list-style: none;
-            margin-right: 1rem;
-            padding: 8px 18px;
-            cursor: pointer;
-            background-color: $ikincirenk;
-            color: $anarenk;
-            outline: none;
-            border-radius: 5px;
-            @media screen and (max-width:850px){
-                font-size: 21px;
-                margin-right:0;
-                text-align: center;
-                padding: 15px 0;
-                width: 100%;
-                border-radius: 0;
-                background-color: $anarenk;
-                color: $ikincirenk;
-                &:hover{
-                    background-color: $ikincirenk;
-                    color: $anarenk;
-                }
-            }
-
-            &:active{
-                transform: scale(.95);
-                
-            }
-        }
-    }
-}
 
 
 .main-one{
@@ -222,6 +223,7 @@ nav{
            background-color: $anarenk;
            position: absolute;
            top: 50%;
+           transition: .3s ease-in;
            transform: translateY(-50%);
         }
         .box{
@@ -238,6 +240,7 @@ nav{
                 justify-content: center;
                 width: 30px;
                 height: 30px;
+                transition: .4s ease-in;
                 &.actives{
                     border: 3px solid $anarenk;
                 }
@@ -249,6 +252,44 @@ nav{
     
 }
 
+.main-three{
+    background-color: $anarenk;
+    width: 100vw;
+    margin-top: 4rem;
+    padding-bottom: 5rem;
+    display: flex;
+    justify-content: center;
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        h1{
+            color: #fff;
+            margin: 2.5rem 0;
+            font-size: 1.9rem;
+        }
+        .box-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .box{
+                background-color: #fff;
+                color: $anarenk;
+                font-weight: 700;
+                font-size: 2rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100px;
+                height: 100px;
+                margin-right: 1.5rem;
+                border-radius: 3px;
+            }
+        }
+        
+    }
+}
 footer{
     height: 500px;
 }

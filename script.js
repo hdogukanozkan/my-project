@@ -46,6 +46,7 @@ prev.addEventListener("click", () => {
         }
     })
 })
+
 next.addEventListener("click", () => {
     i = i + 1;
     full();
@@ -93,3 +94,32 @@ function full() {
 }
 
 
+// Hedef saatim:
+var countDownDate = new Date("May 5, 2022 18:00:00").getTime();
+
+// Her saniyede kodun güncellenmesi
+var x = setInterval(function() {
+	
+  // Bugünün zamanını almak
+  var now = new Date().getTime();
+  // kalan zaman = hedef - şuan;
+  var distance = countDownDate - now;
+    
+  // BU kodu gram anlamadım
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // ekrana yazdırma
+  document.getElementById("gun").innerHTML = days + "d ";
+  document.getElementById("saat").innerHTML = hours + "h ";
+  document.getElementById("dakika").innerHTML = minutes + "m ";
+  document.getElementById("saniye").innerHTML = seconds + "s ";
+    
+  // Zaman dolduğun da yazacak. 
+  if (distance < 0) {
+    clearInterval(x);
+    document.querySelector("box-container").innerHTML = "EXPIRED";
+  }
+}, 0);

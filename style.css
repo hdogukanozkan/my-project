@@ -18,6 +18,125 @@ nav {
   position: relative;
 }
 
+nav .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+nav .left .icon {
+  margin-right: 8px;
+}
+
+@media screen and (max-width: 850px) {
+  nav .left .icon {
+    margin-right: 5px;
+  }
+}
+
+nav .right input {
+  position: absolute;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+nav .right input:checked ~ .menu-icon {
+  border: 1px solid #fff;
+}
+
+nav .right .menu-icon {
+  font-size: 2rem;
+  border-radius: 2px;
+  padding: 4px;
+  display: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 850px) {
+  nav .right .menu-icon {
+    display: block;
+  }
+}
+
+nav .right .menu-bar {
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media screen and (max-width: 850px) {
+  nav .right .menu-bar {
+    display: block;
+    background-color: #1e92ff;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 0px;
+    overflow-y: hidden;
+    opacity: 0;
+  }
+  nav .right .menu-bar.active {
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+    height: auto;
+    opacity: 1;
+    overflow-y: auto;
+  }
+}
+
+nav .right .menu-bar li {
+  font-size: 18px;
+  list-style: none;
+  margin-right: 1rem;
+  padding: 8px 18px;
+  cursor: pointer;
+  background-color: #fff;
+  color: #1e92ff;
+  outline: none;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 850px) {
+  nav .right .menu-bar li {
+    font-size: 21px;
+    margin-right: 0;
+    text-align: center;
+    padding: 15px 0;
+    width: 100%;
+    border-radius: 0;
+    background-color: #1e92ff;
+    color: #fff;
+  }
+  nav .right .menu-bar li:hover {
+    background-color: #fff;
+    color: #1e92ff;
+  }
+}
+
+nav .right .menu-bar li:active {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
 nav .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -42,125 +161,6 @@ nav .container {
   nav .container {
     padding: 1.5rem 5%;
   }
-}
-
-.left {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-size: 25px;
-  font-weight: bold;
-}
-
-.left .icon {
-  margin-right: 8px;
-}
-
-@media screen and (max-width: 850px) {
-  .left .icon {
-    margin-right: 5px;
-  }
-}
-
-.right input {
-  position: absolute;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-}
-
-.right input:checked ~ .menu-icon {
-  border: 1px solid #fff;
-}
-
-.right .menu-icon {
-  font-size: 2rem;
-  border-radius: 2px;
-  padding: 4px;
-  display: none;
-  cursor: pointer;
-}
-
-@media screen and (max-width: 850px) {
-  .right .menu-icon {
-    display: block;
-  }
-}
-
-.right .menu-bar {
-  z-index: 2;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-@media screen and (max-width: 850px) {
-  .right .menu-bar {
-    display: block;
-    background-color: #1e92ff;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    height: 0px;
-    overflow-y: hidden;
-    opacity: 0;
-  }
-  .right .menu-bar.active {
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
-    -webkit-transition: all 0.2s ease-in;
-    transition: all 0.2s ease-in;
-    height: auto;
-    opacity: 1;
-    overflow-y: auto;
-  }
-}
-
-.right .menu-bar li {
-  font-size: 18px;
-  list-style: none;
-  margin-right: 1rem;
-  padding: 8px 18px;
-  cursor: pointer;
-  background-color: #fff;
-  color: #1e92ff;
-  outline: none;
-  border-radius: 5px;
-}
-
-@media screen and (max-width: 850px) {
-  .right .menu-bar li {
-    font-size: 21px;
-    margin-right: 0;
-    text-align: center;
-    padding: 15px 0;
-    width: 100%;
-    border-radius: 0;
-    background-color: #1e92ff;
-    color: #fff;
-  }
-  .right .menu-bar li:hover {
-    background-color: #fff;
-    color: #1e92ff;
-  }
-}
-
-.right .menu-bar li:active {
-  -webkit-transform: scale(0.95);
-          transform: scale(0.95);
 }
 
 .main-one {
@@ -299,6 +299,8 @@ nav .container {
   background-color: #1e92ff;
   position: absolute;
   top: 50%;
+  -webkit-transition: .3s ease-in;
+  transition: .3s ease-in;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
@@ -331,10 +333,77 @@ nav .container {
           justify-content: center;
   width: 30px;
   height: 30px;
+  -webkit-transition: .4s ease-in;
+  transition: .4s ease-in;
 }
 
 .main-two .container-box .box .circle.actives {
   border: 3px solid #1e92ff;
+}
+
+.main-three {
+  background-color: #1e92ff;
+  width: 100vw;
+  margin-top: 4rem;
+  padding-bottom: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main-three .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+
+.main-three .container h1 {
+  color: #fff;
+  margin: 2.5rem 0;
+  font-size: 1.9rem;
+}
+
+.main-three .container .box-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main-three .container .box-container .box {
+  background-color: #fff;
+  color: #1e92ff;
+  font-weight: 700;
+  font-size: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100px;
+  height: 100px;
+  margin-right: 1.5rem;
+  border-radius: 3px;
 }
 
 footer {
