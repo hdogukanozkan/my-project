@@ -206,6 +206,9 @@ nav{
     .container-box{
         width: 450px;
         position: relative;
+        @media screen and (width:550px){
+            width: 100%;
+        }
         &::before{
             content: "";
             width: 100%;

@@ -280,6 +280,12 @@ nav .container {
   position: relative;
 }
 
+@media screen and (width: 550px) {
+  .main-two .container-box {
+    width: 100%;
+  }
+}
+
 .main-two .container-box::before {
   content: "";
   width: 100%;
