@@ -221,11 +221,15 @@ nav .container {
 .main-one .container .post h3 {
   position: absolute;
   bottom: 2rem;
-  left: 2rem;
+  left: 1rem;
   font-size: 25px;
   opacity: 0;
-  -webkit-transition: opacity 0.4s ease-in 0.2s;
-  transition: opacity 0.4s ease-in 0.2s;
+}
+
+@media screen and (max-width: 950px) {
+  .main-one .container .post h3 {
+    display: none;
+  }
 }
 
 .main-one .container .post.active {
@@ -235,7 +239,10 @@ nav .container {
 }
 
 .main-one .container .post.active h3 {
+  display: inline-block;
   opacity: 1;
+  -webkit-transition: opacity 0.4s ease-in 0.4s;
+  transition: opacity 0.4s ease-in 0.4s;
 }
 
 .main-two {

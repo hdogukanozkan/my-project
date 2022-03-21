@@ -142,8 +142,8 @@ nav {
     justify-content: center;
     .post {
       cursor: pointer;
-      background-position: center;
-      background-repeat: no-repeat;
+      background-position:center;
+      background-repeat:no-repeat;
       background-size: cover;
       margin: 10px;
       height: 70vh;
@@ -157,15 +157,19 @@ nav {
       h3 {
         position: absolute;
         bottom: 2rem;
-        left: 2rem;
+        left: 1rem;
         font-size: 25px;
         opacity: 0;
-        transition: opacity 0.4s ease-in 0.2s;
+        @media screen and(max-width:950px){
+          display: none;
+        }
       }
       &.active {
         flex: 5;
         h3 {
+          display: inline-block;
           opacity: 1;
+          transition: opacity 0.4s ease-in 0.4s;
         }
       }
     }
