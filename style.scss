@@ -121,7 +121,7 @@ nav {
     .search {
       margin-left: auto;
       @media screen and (max-width: 1000px){
-        padding: 0 2vw;
+        padding: .5rem 2vw;
         width: 100%;
         margin: 0 auto 1rem;
         text-align: center;
@@ -131,7 +131,7 @@ nav {
         color: black;
         @media screen and (max-width: 1000px){
           position: absolute;
-          bottom: .5rem;
+          bottom: 1rem;
           right: 10%;
         }
       }

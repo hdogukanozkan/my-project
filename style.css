@@ -171,7 +171,7 @@ nav .right .search {
 
 @media screen and (max-width: 1000px) {
   nav .right .search {
-    padding: 0 2vw;
+    padding: .5rem 2vw;
     width: 100%;
     margin: 0 auto 1rem;
     text-align: center;
@@ -186,7 +186,7 @@ nav .right .search button {
 @media screen and (max-width: 1000px) {
   nav .right .search button {
     position: absolute;
-    bottom: .5rem;
+    bottom: 1rem;
     right: 10%;
   }
 }
