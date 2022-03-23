@@ -123,3 +123,31 @@ var x = setInterval(function() {
     document.querySelector("box-container").innerHTML = "EXPIRED";
   }
 }, 0);
+
+
+
+
+const bg = document.querySelector(".bg")
+
+let y = 0;
+
+let int = setInterval(basla, 10)
+
+
+function basla() {
+    y++;
+    
+
+    if (y === 101) {
+        clearInterval(int);
+    }
+
+    
+    bg.style.filter = "blur(" + scale(y, 0, 100, 30, 0) + "px)"
+}
+
+
+
+function scale(number, inMin, inMax, outMin, outMax) {
+    return (number - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
+}
