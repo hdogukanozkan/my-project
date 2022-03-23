@@ -17,6 +17,42 @@ nav {
           box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   position: relative;
   width: 100vw;
+  padding: 1.5rem 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 1300px) {
+  nav {
+    padding: 1.5rem 2%;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  nav {
+    padding: 1.5rem 5%;
+  }
+}
+
+nav .menu-icon {
+  font-size: 2rem;
+  border-radius: 2px;
+  padding: 4px;
+  display: none;
+  position: absolute;
+  right: 2rem;
+  top: 1rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1000px) {
+  nav .menu-icon {
+    display: block;
+  }
 }
 
 nav .left {
@@ -28,6 +64,7 @@ nav .left {
           align-items: center;
   font-size: 25px;
   font-weight: bold;
+  margin-right: 1.5rem;
 }
 
 nav .left .icon {
@@ -40,46 +77,22 @@ nav .left .icon {
   }
 }
 
-nav .right input {
-  position: absolute;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-}
-
-nav .right input:checked ~ .menu-icon {
-  border: 1px solid #fff;
-}
-
-nav .right .menu-icon {
-  font-size: 2rem;
-  border-radius: 2px;
-  padding: 4px;
-  display: none;
-  cursor: pointer;
-}
-
-@media screen and (max-width: 850px) {
-  nav .right .menu-icon {
-    display: block;
-  }
-}
-
-nav .right .menu-bar {
-  z-index: 2;
+nav .right {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  background-color: #1e92ff;
+  z-index: 2;
 }
 
-@media screen and (max-width: 850px) {
-  nav .right .menu-bar {
+@media screen and (max-width: 1000px) {
+  nav .right {
     display: block;
     background-color: #1e92ff;
     -webkit-box-orient: vertical;
@@ -94,7 +107,7 @@ nav .right .menu-bar {
     overflow-y: hidden;
     opacity: 0;
   }
-  nav .right .menu-bar.active {
+  nav .right.active {
     border-top: 1px solid rgba(255, 255, 255, 0.3);
     -webkit-transition: all 0.2s ease-in;
     transition: all 0.2s ease-in;
@@ -104,7 +117,21 @@ nav .right .menu-bar {
   }
 }
 
-nav .right .menu-bar li {
+nav .right ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+}
+
+@media screen and (max-width: 1000px) {
+  nav .right ul {
+    display: block;
+  }
+}
+
+nav .right ul li {
   font-size: 18px;
   list-style: none;
   margin-right: 1rem;
@@ -116,8 +143,8 @@ nav .right .menu-bar li {
   border-radius: 5px;
 }
 
-@media screen and (max-width: 850px) {
-  nav .right .menu-bar li {
+@media screen and (max-width: 1000px) {
+  nav .right ul li {
     font-size: 21px;
     margin-right: 0;
     text-align: center;
@@ -127,40 +154,62 @@ nav .right .menu-bar li {
     background-color: #1e92ff;
     color: #fff;
   }
-  nav .right .menu-bar li:hover {
+  nav .right ul li:hover {
     background-color: #fff;
     color: #1e92ff;
   }
 }
 
-nav .right .menu-bar li:active {
+nav .right ul li:active {
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
 }
 
-nav .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100vw;
-  padding: 1.5rem 5%;
+nav .right .search {
+  margin-left: auto;
 }
 
-@media screen and (max-width: 1300px) {
-  nav .container {
-    padding: 1.5rem 2%;
+@media screen and (max-width: 1000px) {
+  nav .right .search {
+    padding: 0 2vw;
+    width: 100%;
+    margin: 0 auto 1rem;
+    text-align: center;
+    position: relative;
   }
 }
 
-@media screen and (max-width: 850px) {
-  nav .container {
-    padding: 1.5rem 5%;
+nav .right .search button {
+  color: black;
+}
+
+@media screen and (max-width: 1000px) {
+  nav .right .search button {
+    position: absolute;
+    bottom: .5rem;
+    right: 10%;
+  }
+}
+
+nav .right .search input {
+  padding: 7px 12px;
+  color: black;
+  font-size: 18px;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+  width: 300px;
+}
+
+@media screen and (max-width: 1100px) {
+  nav .right .search input {
+    width: 250px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  nav .right .search input {
+    width: 90%;
   }
 }
 
@@ -417,7 +466,7 @@ nav .container {
           align-items: center;
   width: 100px;
   height: 100px;
-  margin: 0 .5rem;
+  margin: 0 0.5rem;
   border-radius: 3px;
 }
 

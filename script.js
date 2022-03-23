@@ -1,5 +1,5 @@
 const menu_icon = document.querySelector(".menu-icon");
-const menu_bar = document.querySelector(".menu-bar");
+const menu_bar = document.querySelector(".right");
 const next = document.querySelector(".next");
 const prev = document.querySelector(".prev");
 
